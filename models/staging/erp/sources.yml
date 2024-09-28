@@ -19,4 +19,11 @@ sources:
       - name: category      
       - name: supplier
       - name: _order_    
-      - name: orderdetail  
+      - name: orderdetail
+      - name: customer
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
+          
