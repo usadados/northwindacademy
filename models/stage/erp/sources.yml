@@ -15,7 +15,5 @@ sources:
               - not_null
         
       - name: product
-
       - name: category
-
-      - name: suplier
+      - name: supplier
