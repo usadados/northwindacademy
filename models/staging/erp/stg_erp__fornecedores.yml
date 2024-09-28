@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_erp__fornecedores
+    description: Tabela de preparação dos dados brutos dos fornecedores, contendo informações sobre empresas e sua localização.
+    columns:
+      - name: pk_fornecedor
+        description: Chave primária única que identifica cada fornecedor.
+        tests:
+          - unique
+          - not_null
+      - name: nome_fornecedor
+        description: Nome da empresa fornecedora.
+      - name: cidade_fornecedor
+        description: Cidade onde o fornecedor está localizado.
+      - name: pais_fornecedor
+        description: País onde o fornecedor está localizado.

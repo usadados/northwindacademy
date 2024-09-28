@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_erp__clientes
+    description: Tabela de preparação dos dados brutos dos clientes, contendo informações de contato e localização.
+    columns:
+      - name: pk_cliente
+        description: Chave primária única que identifica cada cliente.
+        tests:
+          - unique
+          - not_null
+      - name: compania_cliente
+        description: Nome da empresa cliente.
+      - name: nome_cliente
+        description: Nome do contato na empresa cliente.
+      - name: contato_cliente
+        description: Cargo ou título do contato na empresa cliente.
+      - name: endereco_cliente
+        description: Endereço do cliente.
+      - name: cidade_cliente
+        description: Cidade onde o cliente está localizado.
+      - name: regiao_cliente
+        description: Região onde o cliente está localizado.
+      - name: postal_cliente
+        description: Código postal do endereço do cliente.
+      - name: pais_cliente
+        description: País onde o cliente está localizado.
+      - name: telefone_cliente
+        description: Número de telefone do cliente.

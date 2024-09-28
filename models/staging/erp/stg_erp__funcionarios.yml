@@ -2,32 +2,26 @@ version: 2
 
 models:
   - name: stg_erp__funcionarios
-    description: Tabela de preparação dos dados brutos da funcionários.
+    description: Tabela de preparação dos dados brutos dos funcionários, contendo informações pessoais e profissionais.
     columns:
-      - name: PK_FUNCIONARIO
-        description: blablabla.
-        
-      - name: FK_GERENTE
-        description: blablabla.
-        
-      - name: NOME_FUNCIONARIO
-        description: blablabla.
-        
-      - name: CARGO_FUNCIONARIO
-        description: blablabla.
-        
-      - name: DT_NASCIMENTO_FUNCIONARIO
-        description: blablabla.
-        
-      - name: DT_CONTRATACAO
-        description: blablabla.
-        
-      - name: CIDADE_FUNCIONARIO
-        description: blablabla.
-        
-      - name: REGIAO_FUNCIONARIO
-        description: blablabla.
-        
-      - name: PAIS_FUNCIONARIO
-        description: blablabla.
-        
+      - name: pk_funcionario
+        description: Chave primária única que identifica cada funcionário.
+        tests:
+          - unique
+          - not_null
+      - name: fk_gerente
+        description: Chave estrangeira que referencia o gerente direto do funcionário.
+      - name: nome_funcionario
+        description: Nome completo do funcionário.
+      - name: cargo_funcionario
+        description: Cargo ou título do funcionário dentro da empresa.
+      - name: dt_nascimento_funcionario
+        description: Data de nascimento do funcionário.
+      - name: dt_contratacao
+        description: Data em que o funcionário foi contratado.
+      - name: cidade_funcionario
+        description: Cidade de residência do funcionário.
+      - name: regiao_funcionario
+        description: Região de residência do funcionário.
+      - name: pais_funcionario
+        description: País de residência do funcionário.

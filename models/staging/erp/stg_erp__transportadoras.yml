@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_erp__transportadoras
+    description: Tabela de preparação dos dados brutos de transportadoras.
+    columns:
+      - name: pk_transportadora
+        description: Chave primária de cada transportadora.
+        tests:
+          - unique
+          - not_null
