@@ -2,10 +2,48 @@ version: 2
 
 models:
   - name: int_vendas_metricas
-    description: Tabela de intermediário com as métricas de venda da Northwind.
+    description: Tabela que combina dados de pedidos e itens de pedidos, enriquecendo com métricas financeiras e informações detalhadas sobre o pedido.
     columns:
       - name: pk_pedido_item
-        description: blablabla.
-        data_tests:
+        description: Chave primária única que identifica cada item do pedido.
+        tests:
           - unique
           - not_null
+      - name: fk_produto
+        description: Chave estrangeira que referencia o produto associado ao item do pedido.
+      - name: fk_funcionario
+        description: Chave estrangeira que referencia o funcionário que processou o pedido.
+      - name: fk_cliente
+        description: Chave estrangeira que referencia o cliente que fez o pedido.
+      - name: fk_transportadora
+        description: Chave estrangeira que referencia a transportadora responsável pela entrega.
+      - name: data_do_pedido
+        description: Data em que o pedido foi realizado.
+      - name: data_do_envio
+        description: Data em que o pedido foi enviado ao cliente.
+      - name: data_requerida_entrega
+        description: Data em que a entrega do pedido é esperada.
+      - name: desconto_perc
+        description: Percentual de desconto aplicado ao item do pedido.
+      - name: preco_da_unidade
+        description: Preço de venda por unidade do item do pedido.
+      - name: quantidade
+        description: Quantidade do item do pedido.
+      - name: valor_bruto
+        description: Valor total bruto do item antes de descontos.
+      - name: valor_liquido
+        description: Valor total líquido do item após aplicação do desconto.
+      - name: frete_rateado
+        description: Valor do frete rateado entre os itens do mesmo pedido.
+      - name: numero_pedido
+        description: Número único do pedido.
+      - name: nm_destinatario
+        description: Nome do destinatário da entrega.
+      - name: cidade_destinatario
+        description: Cidade onde o destinatário está localizado.
+      - name: regiao_destinatario
+        description: Região onde o destinatário está localizado.
+      - name: pais_destinatario
+        description: País onde o destinatário está localizado.
+      - name: teve_desconto
+        description: Indica se o item do pedido teve desconto aplicado (verdadeiro ou falso).
