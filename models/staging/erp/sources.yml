@@ -20,6 +20,7 @@ sources:
       - name: supplier
       - name: _order_    
       - name: orderdetail
+      - name: shipper
       - name: customer
         columns:
           - name: id
