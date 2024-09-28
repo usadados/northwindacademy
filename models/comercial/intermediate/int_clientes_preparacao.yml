@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: int_clientes_preparacao
+    description: Tabela que contém os dados brutos dos clientes, incluindo informações de contato e localização.
+    columns:
+      - name: pk_cliente
+        description: Chave primária única que identifica cada cliente.
+        tests:
+          - unique
+          - not_null

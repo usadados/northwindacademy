@@ -1,12 +1,35 @@
-
 version: 2
 
 models:
   - name: int_produtos_enriquecida
-    description: Tabela de intermediário para enriquecer os dados da dimensão produto.
+    description: Tabela que combina dados dos produtos com informações de suas categorias e fornecedores, enriquecendo as informações sobre cada produto.
     columns:
-      - name: PK_PRODUTO
-        description: blablabla.
-        data_tests:
+      - name: pk_produto
+        description: Chave primária única que identifica cada produto.
+        tests:
           - unique
           - not_null
+      - name: nm_produto
+        description: Nome do produto.
+      - name: quantidade_por_unidade
+        description: Quantidade de itens por unidade do produto.
+      - name: preco_por_unidade
+        description: Preço de venda por unidade do produto.
+      - name: unidade_em_estoque
+        description: Número de unidades do produto disponíveis em estoque.
+      - name: unidade_por_pedido
+        description: Número de unidades do produto que devem ser solicitadas em um pedido.
+      - name: nivel_de_pedido
+        description: Nível mínimo de estoque que aciona um novo pedido do produto.
+      - name: eh_descontinuado
+        description: Indica se o produto está descontinuado (verdadeiro ou falso).
+      - name: nome_categoria
+        description: Nome da categoria à qual o produto pertence.
+      - name: descricao_categoria
+        description: Descrição da categoria à qual o produto pertence.
+      - name: nome_fornecedor
+        description: Nome do fornecedor do produto.
+      - name: cidade_fornecedor
+        description: Cidade onde o fornecedor do produto está localizado.
+      - name: pais_fornecedor
+        description: País onde o fornecedor do produto está localizado.
