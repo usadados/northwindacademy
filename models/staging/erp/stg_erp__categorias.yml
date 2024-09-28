@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_erp__categorias
+    description: Tabela de preparação dos dados brutos das categorias de produtos, contendo informações sobre cada categoria.
+    columns:
+      - name: pk_categoria
+        description: Chave primária única que identifica cada categoria.
+        tests:
+          - unique
+          - not_null
+      - name: nome_categoria
+        description: Nome da categoria de produtos.
+      - name: descricao_categoria
+        description: Descrição da categoria de produtos.

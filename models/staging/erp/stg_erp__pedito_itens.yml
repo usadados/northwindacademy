@@ -1,13 +1,25 @@
-
 version: 2
 
 models:
   - name: stg_erp__pedido_itens
-    description: Tabela de preparação dos dados brutos da funcionários.
+    description: Tabela de preparação dos itens dos pedidos, detalhando produtos, preços, quantidades e descontos aplicados.
     columns:
       - name: pk_pedido_item
-        description: blablabla.
-        data_tests:
+        description: Chave primária composta por `orderid` e `productid` para identificar de forma única cada item dentro de um pedido.
+        tests:
           - unique
-          - not_null           
-        
+          - not_null
+      - name: fk_pedido
+        description: Chave estrangeira que referencia o pedido ao qual o item pertence.
+        tests:
+          - not_null
+      - name: fk_produto
+        description: Chave estrangeira que referencia o produto vendido no pedido.
+        tests:
+          - not_null
+      - name: desconto_perc
+        description: Percentual de desconto aplicado ao item do pedido.
+      - name: preco_da_unidade
+        description: Preço unitário do produto no momento do pedido.
+      - name: quantidade
+        description: Quantidade de unidades do produto no pedido.

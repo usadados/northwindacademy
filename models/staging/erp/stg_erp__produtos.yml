@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_erp__produtos
+    description: Tabela de preparação dos dados brutos de produtos.
+    columns:
+      - name: pk_produto
+        description: Chave primária de cada produto.
+        tests:
+          - unique
+          - not_null

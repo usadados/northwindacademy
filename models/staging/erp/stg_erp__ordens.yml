@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_erp__pedidos
+    description: Tabela de preparação dos dados brutos de pedidos, contendo informações de clientes, funcionários e detalhes de envio.
+    columns:
+      - name: pk_pedido
+        description: Chave primária única de cada pedido.
+        tests:
+          - unique
+          - not_null
+      - name: fk_funcionario
+        description: Chave estrangeira que referencia o funcionário responsável pelo pedido.
+        tests:
+          - not_null
+      - name: fk_cliente
+        description: Chave estrangeira que referencia o cliente que realizou o pedido.
+        tests:
+          - not_null
+      - name: fk_transportadora
+        description: Chave estrangeira que referencia a transportadora utilizada para o envio do pedido.
+      - name: numero_pedido
+        description: Número de identificação do pedido.
+      - name: data_do_pedido
+        description: Data em que o pedido foi realizado.
+      - name: data_do_envio
+        description: Data em que o pedido foi enviado.
+      - name: data_requerida_entrega
+        description: Data esperada para a entrega do pedido.
+      - name: frete
+        description: Custo do frete para o envio do pedido.
+      - name: nm_destinatario
+        description: Nome do destinatário que receberá o pedido.
+      - name: cidade_destinatario
+        description: Cidade onde o pedido será entregue.
+      - name: regiao_destinatario
+        description: Região onde o pedido será entregue.
+      - name: pais_destinatario
+        description: País onde o pedido será entregue.
